@@ -1,42 +1,172 @@
-body {
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    color: #d9d9d9;
+    font-family: 'Poppins', sans-serif;
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
     background: #111;
 }
 
-.carousel {
-    height: 600px;
-    perspective: 250px;
+.main-content {
+    display: flex;
 }
 
-.carousel .carousel-item {
-    width: 450px;
-    background: #fff;
-    padding: 50px;
-    height: auto;
-    text-align: center;
-    border-radius: 15px;
-    box-shadow: 20px 20px 50px -30px blue;
+.main-content .box {
+    flex-basis: 50%;
+    padding: 10px 20px;
 }
 
-.img-area img {
-    width: 100%;
-}
-
-.testi p {
-    color: #262626;
+.box h2 {
     font-size: 18px;
-    line-height: 1.9;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
-.testi h4 {
-    font-size: 20px;
-    margin: 0;
-    color: #000;
+.box .content {
+    margin: 20px 0 0 0;
+    position: relative;
 }
 
-.testi h5 {
-    font-size: 14px;
-    letter-spacing: 5px;
-    margin: 7px 0;
+.box .content:after {
+    position: absolute;
+    content: '';
+    width: 15%;
+    height: 2px;
+    background: #f12020;
+    top: -10px;
+}
+
+.box .content:before {
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 100%;
+    background: #1a1a1a;
+    top: -10px;
+}
+
+.left .content .map a span {
+    position: absolute;
+    width: 487px;
+    height: 246px;
+}
+
+.left .content .social a span:hover {
+    background: #f12020;
+}
+
+.left .content p {
+    text-align: justify;
+}
+
+.center .content .fas {
+    font-size: 23px;
+    background: #1a1a1a;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.center .content .fas:hover {
+    background: #f12020;
+}
+
+.center .content .text {
+    font-size: 17px;
+    font-weight: 500;
+    padding-left: 10px;
+}
+
+.center .content .phone {
+    margin: 10px 0;
+}
+
+.center .content .msg {
+    margin-top: 10px;
+}
+
+.right form input,
+.right form textarea {
+    width: 100%;
+    font-size: 17px;
+    background: #151515;
+    padding-left: 10px;
+    border: 1px solid #222222;
+}
+
+.right form input {
+    height: 35px;
+}
+
+.right form input:focus,
+.right form textarea:focus {
+    outline-color: #3498db;
+}
+
+.right form .text {
+    font-size: 17px;
+    margin-bottom: 2px;
+    color: #656565;
+}
+
+.right form .btn {
+    margin-top: 10px;
+}
+
+.right form .btn button {
+    height: 40px;
+    width: 100%;
+    background: #f12020;
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.right form .btn button:hover {
+    background: #000;
+}
+
+.bottom .center {
+    padding: 5px;
+    font-size: 15px;
+    background: #151515;
+    text-align: center;
+}
+
+.bottom .center span {
+    color: #656565;
+}
+
+.bottom .center a {
+    color: #f12020;
+    text-decoration: none;
+}
+
+.bottom .center a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 900px) {
+    footer {
+        position: fixed;
+        bottom: 0px;
+    }
+    .main-content {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .main-content .box {
+        margin: 5px 0;
+    }
 }
